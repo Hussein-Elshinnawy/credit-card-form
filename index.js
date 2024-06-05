@@ -4,7 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   cardNumberInput.addEventListener("input", (event) => {
     var enteredCardNumber = event.target.value;
-    frontCardNumber.textContent = enteredCardNumber;
+    enteredCardNumber = enteredCardNumber.replace(/\s/g, "");
+    const formattedCardNumber = enteredCardNumber.replace(/(\d{4})/g, "$1 ");
+    frontCardNumber.textContent = formattedCardNumber;
   });
 
   var usernameInput = document.getElementById("username");

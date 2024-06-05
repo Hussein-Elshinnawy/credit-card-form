@@ -45,8 +45,9 @@
       <div class="cardnumber">
         <fieldset>
           <label for="cardnumber">CARD NUMBER</label><br />
-          <input type="text" id="cardnumber" placeholder="e.g. 1234 5678 9123 0000" pattern="[0-9]{16}" required
-            minlength="16" maxlength="16" /><br />
+          <input type="text" id="cardnumber" placeholder="e.g. 1234 5678 9123 0000" pattern="(?:[0-9]{4 }?){3}[0-9]{4}" required
+            minlength="16" maxlength="19"
+            /><br />
           <span class="error-message" id="cardnumber-error"></span>
         </fieldset>
       </div>

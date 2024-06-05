@@ -77,34 +77,43 @@ input:focus {
 
 .parent {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   width: 400px;
   position: absolute;
   left: 55%;
   top: 50%;
   transform: translateY(-50%);
-  align-items: stretch;
 }
 
 .name {
-  grid-area: 1 / 1 / 2 / 5;
+  /* grid-area: 1 / 1 / 2 / 5; */
+  
+  grid-area: 1 / 1 / 1 / 5;
 }
 
 .cardnumber {
-  grid-area: 2 / 1 / 3 / 5;
+  /* grid-area: 2 / 1 / 3 / 5; */
+  
+  grid-area: 2 / 1 / 2 / 5;
 }
 
 .date {
-  grid-area: 3 / 1 / 4 / 3;
+  /* grid-area: 3 / 1 / 4 / 3; */
+  
+  grid-area: 3 / 1 / 3 / 3;
 }
 
 .cvc {
-  grid-area: 3 / 3 / 4 / 5;
+  /* grid-area: 3 / 3 / 4 / 5; */
+
+  grid-area: 3 / 3 / 3 / 5;
 }
 
 .confirm {
-  grid-area: 4 / 1 / 5 / 5;
+  /* grid-area: 4 / 1 / 5 / 5; */
+  
+  grid-area: 4 / 1 / 4 / 5;
 }
 
 .row {
@@ -112,6 +121,7 @@ input:focus {
   justify-content: space-between;
   gap: 5px;
 }
+
 
 .front-card {
   display: grid;
