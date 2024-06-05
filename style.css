@@ -153,6 +153,7 @@ p,
 span {
   color: hsl(0, 0%, 100%);
   letter-spacing: 2.5px;
+  text-transform:uppercase;
 }
 
 .front-cardnumber p {

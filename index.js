@@ -1,50 +1,38 @@
-document.addEventListener("DOMContentLoaded", () => {
   var cardNumberInput = document.getElementById("cardnumber");
   var frontCardNumber = document.querySelector(".front-cardnumber p");
-
-  cardNumberInput.addEventListener("input", (event) => {
-    var enteredCardNumber = event.target.value;
-    enteredCardNumber = enteredCardNumber.replace(/\s/g, "");
-    const formattedCardNumber = enteredCardNumber.replace(/(\d{4})/g, "$1 ");
-    frontCardNumber.textContent = formattedCardNumber;
-  });
-
   var usernameInput = document.getElementById("username");
   var frontCardName = document.querySelector(".user-name p");
-
-  usernameInput.addEventListener("input", (event) => {
-    var enteredUsername = event.target.value;
-    frontCardName.textContent = enteredUsername;
-  });
-
   var monthInput = document.getElementById("month");
   var frontCardMonth = document.getElementById("mm");
-
-  monthInput.addEventListener("input", (event) => {
-    var enteredMonth = event.target.value;
-    frontCardMonth.textContent = enteredMonth;
-  });
-
   var yearInput = document.getElementById("year");
   var frontCardYear = document.getElementById("yy");
-
-  yearInput.addEventListener("input", (event) => {
-    var enteredYear = event.target.value;
-    frontCardYear.textContent = enteredYear;
-  });
-
   var cvcInput = document.getElementById("cvc");
   var frontCardCvc = document.getElementById("cvc-back");
 
-  cvcInput.addEventListener("input", (event) => {
-    var enteredCvc = event.target.value;
-    frontCardCvc.textContent = enteredCvc;
-  });
-});
+  function updateCardDetails(inputElement, displayElement) {
+    var enteredValue = inputElement.value;
+    displayElement.textContent = enteredValue;
+  }
+  //adjust this code to call the update card and formate 
+  function updateCardNumberDetails(inputElement, displayElement) {
+    var enteredValue = inputElement.value;
+    var formattedValue = enteredValue.replace(/\s/g, "").replace(/(\d{4})/g, "$1 ");
+    displayElement.textContent = formattedValue;
+  }
+
+  cardNumberInput.addEventListener("input", () => updateCardNumberDetails(cardNumberInput, frontCardNumber));
+  usernameInput.addEventListener("input", () => updateCardDetails(usernameInput, frontCardName));
+  monthInput.addEventListener("input", () => updateCardDetails(monthInput, frontCardMonth));
+  yearInput.addEventListener("input", () => updateCardDetails(yearInput, frontCardYear));
+  cvcInput.addEventListener("input", () => updateCardDetails(cvcInput, frontCardCvc));
+
+
 
 function validateForm(event) {
   event.preventDefault();
 }
+
+
 function submitInputValidation(){
   var username = validateInput("username", "invalid cardholder name");
   var cardnumber = validateInput("cardnumber","invalid card number should be 16 numbers")
